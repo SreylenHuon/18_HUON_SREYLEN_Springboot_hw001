@@ -16,16 +16,30 @@ public class ApiResponseTicket {
     private boolean success;
     private String message;
     private HttpStatus status;
-    private Object payload;  // Use Object instead of generic T
+    private Object payload;
     private LocalDate timestamp;
 
     // Static method to create a success response
     public static ApiResponseTicket createSuccessMessage(String message, Object payload) {
-        return new ApiResponseTicket(true, message, HttpStatus.OK, payload, LocalDate.now());
+        ApiResponseTicket response = new ApiResponseTicket();
+        response.setSuccess(true);
+        response.setMessage(message);
+        response.setStatus(HttpStatus.OK);
+        response.setPayload(payload);
+        response.setTimestamp(LocalDate.now());
+        return response;
     }
 
     // Static method to create an error response
     public static ApiResponseTicket createErrorMessage(String message, HttpStatus status) {
-        return new ApiResponseTicket(false, message, status, null, LocalDate.now());
+        ApiResponseTicket response = new ApiResponseTicket();
+        response.setSuccess(false);
+        response.setMessage(message);
+        response.setStatus(status);
+        response.setPayload(null);
+        response.setTimestamp(LocalDate.now());
+        return response;
     }
+
+    // Getters and setters remain the same
 }

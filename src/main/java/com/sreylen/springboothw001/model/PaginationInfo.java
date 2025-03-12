@@ -1,5 +1,4 @@
-package com.sreylen.springboothw001.model.request;
-
+package com.sreylen.springboothw001.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Paginationinfo {
+public class PaginationInfo {
     private long totalElements;
     private int currentPage;
     private int pageSize;

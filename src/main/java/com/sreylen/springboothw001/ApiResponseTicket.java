@@ -1,0 +1,31 @@
+package com.sreylen.springboothw001;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.http.HttpStatus;
+
+import java.time.LocalDate;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class ApiResponseTicket {
+    private boolean success;
+    private String message;
+    private HttpStatus status;
+    private Object payload;  // Use Object instead of generic T
+    private LocalDate timestamp;
+
+    // Static method to create a success response
+    public static ApiResponseTicket createSuccessMessage(String message, Object payload) {
+        return new ApiResponseTicket(true, message, HttpStatus.OK, payload, LocalDate.now());
+    }
+
+    // Static method to create an error response
+    public static ApiResponseTicket createErrorMessage(String message, HttpStatus status) {
+        return new ApiResponseTicket(false, message, status, null, LocalDate.now());
+    }
+}

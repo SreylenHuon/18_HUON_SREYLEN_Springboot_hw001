@@ -1,11 +1,9 @@
-package com.sreylen.springboothw001.model.request;
+package com.sreylen.springboothw001.model;
 
-import com.kshrd.springhomework.model.entity.Ticket;
 import com.sreylen.springboothw001.model.entity.Ticket;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.List;
 
 @Getter

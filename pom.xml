@@ -59,7 +59,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.32</version> <!-- Use the latest version as of March 2025 -->
+<!--            <version>1.18.32</version> &lt;!&ndash; Use the latest version as of March 2025 &ndash;&gt;-->
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -79,6 +79,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
+                            <version>1.18.32</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
